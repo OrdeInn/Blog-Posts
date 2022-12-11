@@ -4,6 +4,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const UserRouter = require('./src/routues/UserRoutes');
+const AuthRouter = require('./src/routues/AuthRoutes');
+const TestRouter = require('./src/routues/TestRoutes');
 
 app.use(bodyParser.json());
 app.use(
@@ -13,7 +15,8 @@ app.use(
 );
 
 app.use('/user', UserRouter);
-
+app.use('/auth', AuthRouter);
+app.use('/test', TestRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
