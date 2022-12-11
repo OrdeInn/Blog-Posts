@@ -83,7 +83,6 @@ function signin (req, res) {
         }
 
         let token = jwt.sign({ id: user.id }, config.secret, {expiresIn: 86400});
-
         let authorities = [];
 
         user.roles.forEach(role => {
