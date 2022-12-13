@@ -1,12 +1,11 @@
 const Blog = require('../models/Blog');
 
 async function createBlog(req, res, next) {
-
     try {
         const blog = new Blog({
             title: req.body.title,
             content: req.body.content,
-            author: req.body.userId,
+            author: req.userId,
         });
 
         let blogData = await blog.save();
