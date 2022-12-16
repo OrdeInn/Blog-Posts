@@ -28,7 +28,7 @@ function BlogService() {
         };
     
         try {
-            result.obj = await Blog.find({ author: userId });
+            result.obj = await Blog.find({ author: userId }).cache({ key:userId });
     
         } catch (error) {
             result.error = true;
