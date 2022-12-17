@@ -7,6 +7,7 @@ const UserRouter = require('./src/routues/UserRoutes');
 const AuthRouter = require('./src/routues/AuthRoutes');
 const TestRouter = require('./src/routues/TestRoutes');
 const BlogRouter = require('./src/routues/BlogRoutes');
+require('./src/services/cache');
 
 app.use(bodyParser.json());
 app.use(
