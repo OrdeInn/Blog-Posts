@@ -3,7 +3,6 @@ const redis = require('redis');
 const util = require('util');
 
 const client = redis.createClient();
-console.log(client);
 client.hget = util.promisify(client.hget);
 const exec = mongoose.Query.prototype.exec;
 

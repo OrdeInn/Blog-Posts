@@ -5,6 +5,6 @@ const { verifyToken } = require('../middlewares/authJwt');
 const { cleanCache }  = require('../middlewares/cleanCache');
 
 router.get('/:userId', BlogControllers.getBlogByUserId);
-router.post('/', verifyToken, BlogControllers.createBlog);
+router.post('/', verifyToken, cleanCache, BlogControllers.createBlog);
 
 module.exports = router;
